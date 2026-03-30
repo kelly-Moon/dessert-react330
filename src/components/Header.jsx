@@ -1,4 +1,5 @@
 import React from "react";
+import { menuData, memberData } from "../data/headerData";
 
 const Header = () => {
   return (
@@ -11,26 +12,19 @@ const Header = () => {
         </div>
         <div className="header_menu">
           <ul>
-            <li>
-              <a href="#">헤어 영역</a>
-            </li>
-            <li>
-              <a href="#">슬라이드 영역</a>
-            </li>
-            <li>
-              <a href="#">배너 영역</a>
-            </li>
-            <li>
-              <a href="#">컨텐츠 영역</a>
-            </li>
-            <li>
-              <a href="#">푸터 영역</a>
-            </li>
+            {menuData.map((menu, index) => (
+              <li key={index}>
+                <a href="#">{menu}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="header_member">
-          <a href="#">로그인</a>
-          <a href="#">회원가입</a>
+          {memberData.map((member, index) => (
+            <a href="#" key={index}>
+              {member}
+            </a>
+          ))}
         </div>
       </div>
     </header>
