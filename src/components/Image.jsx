@@ -8,8 +8,12 @@ const Image = (props) => {
       <h2>{props.title}</h2>
       <p>유러피언 디저트의 본질을 추구한 고급 원재료와 차별화된 레시피</p>
       <div className="image_inner container">
-        {imageData.map((item) => (
-          <article className={`image ${item.className}`} key={item.id}>
+        {imageData.map((item, index) => (
+          <article
+            className={`image ${item.className}`}
+            key={item.id}
+            data-aos="fade-up"
+            data-aos-delay={index * 150}>
             <h3 className="image_title">{item.title}</h3>
             <p className="image_desc">{item.desc}</p>
             <p className={`image_btn ${item.btnClass}`}>자세히 보기</p>

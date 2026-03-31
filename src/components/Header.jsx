@@ -14,7 +14,7 @@ const Header = () => {
           <ul>
             {menuData.map((menu, index) => (
               <li key={index}>
-                <a href="#">{menu}</a>
+                <a href={menu.link}>{menu.title}</a>
               </li>
             ))}
           </ul>

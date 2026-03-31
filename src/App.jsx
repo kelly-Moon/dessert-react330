@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 
 import Slider from "./components/Slider";
@@ -11,7 +11,20 @@ import Footer from "./components/Footer";
 import Skip from "./components/Skip";
 import Main from "./components/Main";
 
+import link from "./utils/link";
+import smooth from "./utils/smooth";
+import reveal from "./utils/reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const App = () => {
+  useEffect(() => {
+    link();
+    smooth();
+    reveal();
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Skip />
